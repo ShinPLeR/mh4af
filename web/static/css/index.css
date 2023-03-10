@@ -1,0 +1,28 @@
+.data-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.data-table-item-1 {
+    width: 5%;
+}
+.data-table-item-2 {
+    width: 20%;
+}
+.data-table-item-3 {
+    width: 15%;
+}
+.data-table-item-4 {
+    width: 10%;
+}
+.data-table-item-5 {
+    width: 15%;
+}
+.data-table-item-6 {
+    width: 15%;
+}
+.data-table-item-7 {
+    width: 20%;
+}

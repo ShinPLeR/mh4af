@@ -1,0 +1,55 @@
+version: 'beta'
+title: 'example_db'
+author: 'ShinPLeR'
+
+schema:
+  tables:
+    users:
+      columns:
+        - id:
+            type: unsigned_bigint
+            pk: true
+            options:
+              auto_increment: true
+        - username:
+            type: varchar(100)
+            comment: 'username'
+            unique: true
+        - user_status:
+            type: tinyint(1)
+            default: 1
+            comment: 'user status'
+        - created_at:
+            type: timestamp
+            default: current_timestamp
+            nullable: true
+            comment: 'created at timestamp'
+        - updated_at:
+            type: timestamp
+            default: current_timestamp
+            nullable: true
+            options:
+              on_update: current_timestamp
+            comment: 'updated at timestamp'
+      description:
+        'This is a sample `users` table'
+    articles:
+      columns:
+        - id:
+            type: unsigned_bigint
+            pk: true
+            options:
+              auto_increment: true
+        - user_id:
+            unique: true
+            fk: true
+            reference: id
+            on: users
+        - body:
+            type: text
+            nullable: true
+            comment: 'article body'
+        - price:
+            type: int
+            default: 0
+            comment: 'price'
